@@ -1,0 +1,210 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".ui.EditMealFragment">
+
+        <LinearLayout
+            android:id="@+id/dateHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/dateIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_date_range_black_24dp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/dateText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:gravity="bottom"
+                android:textColor="@android:color/primary_text_light"
+                app:layout_constraintStart_toEndOf="@id/dateIcon"
+                tools:text="Thu Mar 15" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/timeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_access_time_black_24dp"
+                app:layout_constraintStart_toEndOf="@id/dateText" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:gravity="bottom"
+                android:textColor="@android:color/primary_text_light"
+                app:layout_constraintStart_toEndOf="@id/timeIcon"
+                tools:text="6:30 AM" />
+
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/typeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateHolder">
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioSnack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/snack"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioBreakfast"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/breakfast"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioLunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/lunch"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioDinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dinner"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioDrink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/drink"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/sizeGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/typeGroup">
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/light"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/normal"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radioHeavy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/heavy"
+                android:textSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+        </RadioGroup>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/item_title"
+            app:layout_constraintEnd_toStartOf="@+id/addItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sizeGroup">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/itemTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/addItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_add_black_24dp"
+            app:layout_constraintBottom_toTopOf="@+id/itemsList"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sizeGroup" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/itemsList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>
